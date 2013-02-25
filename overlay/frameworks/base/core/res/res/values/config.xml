@@ -162,4 +162,10 @@
 
     <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
+
+    <!-- Show recent apps panel on home long press -->
+    <integer name="config_longPressOnHomeBehavior">2</integer>
+
+    <!-- Indicates if the device has physical buttons. -->
+    <bool name="config_hasPhysicalButtons">false</bool>
 </resources>
