@@ -67,6 +67,9 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/galaxys2-common/releasetools/galaxys2_ota_from_target_files
 TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/galaxys2-common/releasetools/galaxys2_img_from_target_files
 
+# Hardware tunables
+BOARD_HARDWARE_CLASS := hardware/samsung/cmhw
+
 # Graphics
 BOARD_EGL_CFG := device/samsung/galaxys2-common/configs/egl.cfg
 USE_OPENGL_RENDERER := true
@@ -133,6 +136,17 @@ BOARD_VOLD_MAX_PARTITIONS := 12
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/lun%d/file"
+
+# Selinux
+BOARD_SEPOLICY_DIRS := \
+    device/samsung/galaxys2-common/selinux
+
+BOARD_SEPOLICY_UNION := \
+    device.te \
+    domain.te \
+    file.te \
+    file_contexts \
+    rild.te
 
 # Recovery
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/galaxys2-common/recovery/recovery_keys.c
